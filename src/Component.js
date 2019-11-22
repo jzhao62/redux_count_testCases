@@ -15,7 +15,7 @@ const Component = () => {
         Count: {count}
       </h3>
     <button onClick={handleClick}>
-      Edit <code>src/App.js</code> and save to reload.
+      Increase count
     </button>
     </div>
   );

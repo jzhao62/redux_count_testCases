@@ -30,6 +30,6 @@ describe('<Component /> unit test', () => {
 
     const wrapper = getWrapper(mockStore);
     wrapper.find('button').simulate('click');
-    expect(mockStore.dispatch).toHaveBeenCalledWith(addCount())
+    expect(mockStore.dispatch).toHaveBeenCalledWith(addCount());
   });
 });
