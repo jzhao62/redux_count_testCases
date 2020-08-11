@@ -11,17 +11,22 @@ import reducer from './reducer';
 Enzyme.configure({ adapter: new EnzymeAdapter() });
 
 describe('<Component /> unit test', () => {
-  const getWrapper = (mockStore = createStore(reducer, { count: 0 })) => mount(
+
+
+  const getWrapper = (mockStore) => mount(
     <Provider store={mockStore}>
-      <Component/>
+      <Component value={3}/>
     </Provider>
   );
 
   it('should add to count and display the correct # of counts', () => {
-    const wrapper = getWrapper();
-    expect(wrapper.find('h3').text()).toEqual('Count: 0');
-    wrapper.find('button').simulate('click');
-    expect(wrapper.find('h3').text()).toEqual('Count: 1');
+    const mockStore =  createStore(reducer, { count: 0 })
+    const wrapper = getWrapper(mockStore);
+    console.log(mockStore.getState())
+    wrapper.find(`button[data-testid="ADD"]`).simulate('click');
+    // wrapper.find(`button[data-testid="DECREASE"]`).simulate('click');
+    // expect(wrapper.find('h3').text()).toEqual('Count: 1');
+    console.log(mockStore.getState())
   });
 
   it('should dispatch the correct action on button click', () => {
@@ -31,5 +36,7 @@ describe('<Component /> unit test', () => {
     const wrapper = getWrapper(mockStore);
     wrapper.find('button').simulate('click');
     expect(mockStore.dispatch).toHaveBeenCalledWith(addCount());
+
   });
 });
+
