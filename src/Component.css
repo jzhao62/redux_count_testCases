@@ -2,7 +2,6 @@
   text-align: center;
   background-color: #282c34;
   padding: 30px;
-  height: calc(100vh - 60px);
   display: flex;
   color: lightcyan;
 }

@@ -3,10 +3,12 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 
 import store from './store';
-import Component from './Component';
 import './index.css';
+import App from "./App";
 
 ReactDOM.render(
-  <Provider store={store}><Component /></Provider>,
+  <Provider store={store}>
+      <App value = {1}/>
+  </Provider>,
   document.getElementById('root')
 );

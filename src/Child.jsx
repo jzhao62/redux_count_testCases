@@ -4,29 +4,25 @@ import { useDispatch, useSelector } from "react-redux";
 import './Component.css';
 import { addCount, minusCount } from './actions';
 
-const Component = ({value = 2}) => {
+const Child = ({value = 2}) => {
   const count = useSelector(state => state.count);
   const dispatch = useDispatch();
-  const handleAdd = () => {
-    dispatch(minusCount(11))
-    dispatch(addCount(value));
-  }
+  const handleAdd = () => dispatch(addCount(value))
   const handleMinus = () => dispatch(minusCount(value));
 
   return (
     <div className="App">
       <h3>
-        Count: {count}
+        Counts in childrenView: {count}
       </h3>
-    <button onClick={handleAdd} data-testid="ADD">
-      Increase count
+    <button onClick={handleAdd} data-testid="ADD_2">
+      Increase
     </button>
-
-      {/*<button onClick={handleMinus} data-testid="DECREASE">*/}
-      {/*  Decrease count*/}
-      {/*</button>*/}
+      <button onClick={handleMinus} data-testid="DECREASE_2">
+        Decrease
+      </button>
     </div>
   );
 };
 
-export default Component;
+export default Child;
