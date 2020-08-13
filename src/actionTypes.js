@@ -1,0 +1,2 @@
+export const ADD_COUNT_TYPE = 'ADD_COUNT_TYPE';
+export const MINUS_COUNT_TYPE = 'MINUS_COUNT_TYPE'

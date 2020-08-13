@@ -1,4 +1,4 @@
-import {ADD_COUNT_TYPE, MINUS_COUNT_TYPE} from './actions';
+import {ADD_COUNT_TYPE, MINUS_COUNT_TYPE} from './actionTypes'
 
 const initialState = {
   count: 0,
